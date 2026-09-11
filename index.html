@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Title Tag -->
+  <title>Eledent Dental Hospital in Banjara Hills | Advanced Dental Care</title>
+  
+  <!-- SEO Meta Description -->
+  <meta name="description" content="Eledent Dental Hospital in Banjara Hills, Hyderabad offers specialist dental care, implants, root canal treatment, orthodontics, Invisalign, pediatric dentistry and advanced dental technology." />
+  <meta name="keywords" content="Eledent Dental Hospital, Dental Hospital in Banjara Hills, Dentist in Banjara Hills, Dental Clinic in Banjara Hills, Dental Implants, Root Canal Treatment, Braces, Invisalign, Pediatric Dentistry, Orthodontic Treatment, Smile Makeover" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:title" content="Eledent Dental Hospital in Banjara Hills | Advanced Dental Care" />
+  <meta property="og:description" content="Specialist dental hospital in Banjara Hills, Hyderabad with modern technology, clear treatment planning and 20+ years of clinical experience." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eledenthospitals.com/banjara-hills" />
+  <meta property="og:site_name" content="Eledent Dental Hospital" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { DEFAULT: '#0A2540', dark: '#051424', light: '#16365C' },
+            teal: { DEFAULT: '#00A896', hover: '#028090', light: '#E6F6F4' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- React 18, ReactDOM & Babel Standalone -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Custom Design Tokens & Keyframe Animations -->
+  <style>
+    :root {
+      --primary-navy: #0A2540;
+      --dental-teal: #00A896;
+      --dental-teal-hover: #028090;
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+    body { font-family: var(--font-body); background-color: #F8FAFC; color: #334155; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 168, 150, 0.4); }
+      50% { box-shadow: 0 0 0 12px rgba(0, 168, 150, 0); }
+    }
+    .animate-pulse-glow { animation: pulseGlow 2.5s infinite; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+
+  <!-- Schema.org Dentist / LocalBusiness Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Eledent Dental Hospital - Banjara Hills",
+    "image": "https://eledenthospitals.com/wp-content/uploads/eledent-logo.png",
+    "url": "https://eledenthospitals.com/banjara-hills",
+    "telephone": "+917799619994",
+    "email": "contact@eledenthospitals.com",
+    "priceRange": "₹300 Consultation Fee",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Raichandani Construction, Road No. 12, Sri Ram Nagar Colony",
+      "addressLocality": "Banjara Hills",
+      "addressRegion": "Telangana",
+      "postalCode": "500034",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "09:30",
+      "closes": "21:00"
+    }]
+  }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+  <div id="root"></div>
+
+  <!-- Standalone Transpiled React Application Script -->
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    // DATA SOURCE OF TRUTH
+    const CLINIC_INFO = {
+      name: "Eledent Dental Hospital",
+      branch: "Banjara Hills, Hyderabad",
+      eyebrow: "Eledent Dental Hospital — Banjara Hills",
+      heroDescription: "Eledent Dental Hospital's Banjara Hills branch provides advanced orthodontic and routine dental care with modern technology, clear treatment planning and patient-focused care.",
+      address: {
+        building: "Raichandani Construction",
+        street: "Road No. 12, Sri Ram Nagar Colony",
+        locality: "Banjara Hills",
+        city: "Hyderabad",
+        state: "Telangana",
+        pincode: "500034",
+        fullAddress: "Raichandani Construction, Road No. 12, Sri Ram Nagar Colony, Banjara Hills, Hyderabad, Telangana – 500034"
+      },
+      contact: { phone: "+91 7799619994", phoneClean: "+917799619994", email: "contact@eledenthospitals.com" },
+      timings: { visitingHours: "Mon – Sun, 9:30 AM – 9:00 PM" },
+      consultationFee: "₹300",
+      consultationDetails: "The official Banjara Hills page lists the consultation fee as ₹300. It includes a clinical examination and treatment discussion, with X-rays or scans advised only if needed.",
+      landmarks: ["Sri Ram Nagar Colony Park", "Road No. 12 Junction", "Opposite Century Hospitals", "Beside TX Hospital", "AP Mahesh Co-operative Bank", "Police Commissionate", "Nilofer Cafe", "Virinchi Hospitals"]
+    };
+
+    const SERVICES_LIST = [
+      { id: "pediatric-dentistry", title: "Pediatric Dentistry", category: "Preventive & Child Care", desc: "Specialized dental care for infants, children, and adolescents focusing on gentle preventive treatments and oral health guidance." },
+      { id: "dental-implants", title: "Advanced and Painless Dental Implants", category: "Implantology", desc: "Modern tooth replacement solutions using biocompatible titanium implants for durable, natural-looking tooth restoration." },
+      { id: "laser-gum-treatment", title: "Laser Gum Treatment", category: "Periodontics", desc: "Minimally invasive laser therapy for gum disease, reshaping, and periodontal maintenance with enhanced precision." },
+      { id: "orthodontic-treatment", title: "Orthodontic Treatment", category: "Orthodontics", desc: "Comprehensive tooth alignment solutions including conventional braces and modern alignment systems for proper occlusion." },
+      { id: "smile-makeover", title: "Smile Makeover", category: "Cosmetic Dentistry", desc: "Custom aesthetic dental treatment plans combining whitening, veneers, and alignment to enhance overall smile aesthetics." },
+      { id: "teeth-gap-treatment", title: "Teeth Gap Treatment", category: "Cosmetic & Orthodontics", desc: "Targeted orthodontic or aesthetic procedures designed to close gaps (diastema) between teeth comfortably." },
+      { id: "teeth-whitening", title: "Teeth Whitening", category: "Cosmetic Dentistry", desc: "In-office professional dental whitening treatments including the Zoom whitening system to remove tooth discolorations." },
+      { id: "root-canal-treatment", title: "Root Canal Treatment", category: "Endodontics", desc: "Endodontic therapy using microscopic and laser-assisted systems to clear tooth pulp infections and preserve natural teeth." },
+      { id: "dental-crowns", title: "Dental Crowns", category: "Prosthodontics", desc: "Custom dental caps manufactured for restoring damaged teeth, including CEREC CAD/CAM digital workflow options in suitable cases." },
+      { id: "tooth-pain-treatment", title: "Tooth Pain Treatment", category: "General Dentistry", desc: "Detailed diagnostic evaluation and prompt care to address acute tooth pain, sensitivity, and underlying oral discomfort." },
+      { id: "dental-veneers", title: "Dental Veneers", category: "Cosmetic Dentistry", desc: "Thin porcelain or composite shells crafted to cover the front surface of teeth to correct discoloration, chips, or minor misalignment." },
+      { id: "wisdom-teeth-removal", title: "Wisdom Teeth Removal", category: "Oral Surgery", desc: "Surgical and non-surgical extraction of impacted or troublesome wisdom teeth under strict aseptic conditions." },
+      { id: "invisalign-treatment", title: "Invisalign Treatment", category: "Orthodontics", desc: "Clear, removable aligner systems engineered for transparent orthodontic tooth movement without metal brackets." },
+      { id: "atraumatic-extraction", title: "Atraumatic Extraction", category: "Oral Surgery", desc: "Gentle tooth extraction techniques designed to preserve surrounding bone and soft tissues for faster healing." },
+      { id: "single-visit-dentistry", title: "Single-Visit Dentistry", category: "Digital Dentistry", desc: "Streamlined treatment workflows utilizing CEREC digital scanning and milling technology for select crowns and restorations." },
+      { id: "microscopic-dentistry", title: "Microscopic Dentistry", category: "Advanced Tech", desc: "High-magnification surgical operating microscopes providing enhanced visualization for precise endodontic and restorative procedures." },
+      { id: "dental-fillings", title: "Dental Fillings", category: "Restorative Dentistry", desc: "Tooth-colored composite resin fillings used to restore structure damaged by decay or minor tooth fractures." },
+      { id: "conscious-sedation", title: "Conscious Sedation", category: "Patient Comfort", desc: "Relaxation-assisted dental care options designed for patients with dental anxiety or undergoing extensive procedures." },
+      { id: "braces-and-aligners", title: "Braces & Aligners", category: "Orthodontics", desc: "Complete range of fixed metal, ceramic braces, and clear alignment systems tailored for children and adults." }
+    ];
+
+    const SPECIALIZATIONS_LIST = [
+      { title: "General Dentistry", desc: "Routine dental care, diagnostics, cleanings, fillings, and oral health maintenance." },
+      { title: "Endodontics", desc: "Specialized root canal treatment and inner tooth pulp therapy using magnification." },
+      { title: "Prosthodontics", desc: "Restoration of teeth with dental crowns, bridges, dentures, and prosthetics." },
+      { title: "Orthodontics", desc: "Diagnosis and alignment of irregular teeth, bite correction, braces, and aligners." },
+      { title: "Implantology", desc: "Advanced titanium implant placement and surgical tooth replacement." },
+      { title: "Periodontics", desc: "Treatment of gum disease, periodontal maintenance, and laser gum therapy." },
+      { title: "Pedodontics", desc: "Dedicated pediatric dental care tailored for children's oral development." },
+      { title: "Oral & Maxillofacial Surgery", desc: "Surgical care for complex jaw, facial, wisdom teeth, and oral structure conditions." },
+      { title: "Oral Surgery", desc: "Surgical extraction of problematic teeth and minor intraoral surgical procedures." },
+      { title: "Cosmetic Dentistry", desc: "Aesthetic smile enhancements, teeth whitening, veneers, and smile makeovers." }
+    ];
+
+    const DOCTORS_LIST = [
+      { id: 1, name: "Dr. Manchana Ashok Kumar", specialization: "General Dentist", qualification: "BDS" },
+      { id: 2, name: "Dr. Matham Charan Kumar", specialization: "Dentist", qualification: "BDS" },
+      { id: 3, name: "Dr. Suhaas Pradhyumna", specialization: "Oral And Maxillofacial Surgeon", qualification: "MDS" },
+      { id: 4, name: "Dr. E Santhosh Kumar", specialization: "Oral And Maxillofacial Surgeon", qualification: "MDS" },
+      { id: 5, name: "Dr. Haneesh Mudra", specialization: "General Dentist", qualification: "BDS" },
+      { id: 6, name: "Dr. Ruchira Ganachari", specialization: "General Dentist", qualification: "BDS" },
+      { id: 7, name: "Dr. B Dharanija", specialization: "General Dentist", qualification: "BDS" },
+      { id: 8, name: "Dr. Himasree Kasireddy", specialization: "Endodontist", qualification: "MDS" },
+      { id: 9, name: "Dr. Mounica", specialization: "Orthodontist", qualification: "MDS" },
+      { id: 10, name: "Dr. Borugadda Sujan Sekhar", specialization: "Oral Surgeon", qualification: "MDS" },
+      { id: 11, name: "Dr. Nagajyothi Namilikonda", specialization: "General Dentist", qualification: "BDS" },
+      { id: 12, name: "Dr. Tarun Nalam", specialization: "Implantologist", qualification: "BDS" },
+      { id: 13, name: "Dr. Sai Nikitha Arakari", specialization: "Pedodontist", qualification: "MDS" },
+      { id: 14, name: "Dr. Malathi", specialization: "Implantologist", qualification: "Information not available on official page" },
+      { id: 15, name: "Dr. Vani", specialization: "General Dentist", qualification: "BDS" },
+      { id: 16, name: "Dr. Kaduluri Rajith", specialization: "General Dentist", qualification: "BDS" },
+      { id: 17, name: "Dr. Satish P", specialization: "General Dentist", qualification: "BDS" },
+      { id: 18, name: "Dr. Priyanka Reddy Pinninti", specialization: "General Dentist", qualification: "BDS" },
+      { id: 19, name: "Dr. N Sreevani", specialization: "General Dentist", qualification: "BDS" },
+      { id: 20, name: "Dr. Sushna Komuravelli", specialization: "Prosthodontist", qualification: "MDS" }
+    ];
+
+    const TECHNOLOGIES_LIST = [
+      { name: "3D Scanners", category: "Digital Scanning", detail: "Detailed intraoral digital scanning for accurate impressions without traditional putty molds." },
+      { name: "CBCT 3D X-Ray", category: "3D Imaging", detail: "Cone Beam Computed Tomography providing high-resolution 3D dental and jaw bone imaging." },
+      { name: "Zoom Tooth Whitening System", category: "Cosmetic Tech", detail: "Advanced light-accelerated in-office whitening procedure designed to lift stains." },
+      { name: "Microscopic Root Canal Systems", category: "Endodontic Tech", detail: "High-magnification optical systems for precise canal location and thorough cleaning." },
+      { name: "Laser Root Canal Systems", category: "Endodontic Tech", detail: "Laser energy application to assist in root canal disinfection and bacterial reduction." },
+      { name: "Laser-Assisted Gum Care", category: "Periodontal Tech", detail: "Targeted laser light therapy for soft tissue procedure precision and minimal bleeding." },
+      { name: "CEREC CAD/CAM", category: "Digital Restorations", detail: "Computer-aided design and manufacturing system supporting digital crown workflows." },
+      { name: "Self-Cleaning Dental Chairs", category: "Infection Control", detail: "Automated chair sanitation and internal water line cleansing features." },
+      { name: "10X Sterilization Process", category: "Safety Protocol", detail: "Multi-stage instrument sterilization and packaging protocol following strict hygienic standards." },
+      { name: "Biofilm Therapy", category: "Preventive Care", detail: "Guided biofilm removal technology for gentle prophylactic plaque and calculus cleaning." },
+      { name: "Multiple Operating Rooms", category: "Clinical Setup", detail: "Dedicated clinical operatory suites equipped for specialized dental and surgical procedures." }
+    ];
+
+    const FAQ_LIST = [
+      { q: "What is the consultation fee?", a: "The official Banjara Hills page lists the consultation fee as ₹300. It states that this includes a clinical examination and treatment discussion, with X-rays or scans advised only if needed." },
+      { q: "What services are available?", a: "The Banjara Hills branch offers 19 core services including Pediatric Dentistry, Dental Implants, Laser Gum Care, Orthodontics, Root Canals, Crowns, Invisalign, Sedation, and Braces." },
+      { q: "What are the clinic visiting hours?", a: "Banjara Hills Visiting Hours are Mon – Sun, 9:30 AM – 9:00 PM." },
+      { q: "Where is the Banjara Hills clinic located?", a: "Raichandani Construction, Road No. 12, Sri Ram Nagar Colony, Banjara Hills, Hyderabad, Telangana – 500034." },
+      { q: "How can I contact the clinic?", a: "Phone: +91 7799619994 | Email: contact@eledenthospitals.com" },
+      { q: "Is conscious sedation available?", a: "Yes. Conscious Sedation is listed as a service on the Banjara Hills page. Contact the clinic for suitability and availability." },
+      { q: "Are Invisalign treatments available?", a: "Yes. Invisalign Treatment is officially listed among our Banjara Hills orthodontic services." },
+      { q: "Are dental implants available?", a: "Yes. Advanced and Painless Dental Implants are officially listed among the hospital's services." }
+    ];
+
+    // MAIN REACT APP COMPONENT
+    function App() {
+      const [bookingModalOpen, setBookingModalOpen] = useState(false);
+      const [selectedService, setSelectedService] = useState('');
+      const [selectedDoctor, setSelectedDoctor] = useState('');
+      const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+      
+      // Services Filter State
+      const [serviceSearch, setServiceSearch] = useState('');
+      const [selectedCategory, setSelectedCategory] = useState('All');
+      const [activeModalService, setActiveModalService] = useState(null);
+
+      // Doctors Filter State
+      const [doctorSearch, setDoctorSearch] = useState('');
+      const [selectedSpecialty, setSelectedSpecialty] = useState('All');
+
+      // FAQ Accordion State
+      const [openFaq, setOpenFaq] = useState(0);
+
+      // Chatbot State
+      const [chatOpen, setChatOpen] = useState(false);
+      const [chatMessages, setChatMessages] = useState([
+        { sender: 'bot', text: "Hi! I’m the Eledent Care Assistant. I can help you find information about our Banjara Hills clinic, services, doctors, timings, location, technology and appointments. How can I help?" }
+      ]);
+      const [chatInput, setChatInput] = useState('');
+
+      // Appointment Form State
+      const [formSubmitted, setFormSubmitted] = useState(false);
+      const [formData, setFormData] = useState({ fullName: '', phone: '', email: '', service: '', doctor: '', date: '', message: '' });
+
+      const openBooking = (serv = '', doc = '') => {
+        setSelectedService(serv);
+        setSelectedDoctor(doc);
+        setFormData(prev => ({ ...prev, service: serv, doctor: doc }));
+        setFormSubmitted(false);
+        setBookingModalOpen(true);
+      };
+
+      const categories = ['All', ...new Set(SERVICES_LIST.map(s => s.category))];
+      const filteredServices = SERVICES_LIST.filter(s => 
+        (selectedCategory === 'All' || s.category === selectedCategory) &&
+        (s.title.toLowerCase().includes(serviceSearch.toLowerCase()) || s.desc.toLowerCase().includes(serviceSearch.toLowerCase()))
+      );
+
+      const specialties = ['All', ...new Set(DOCTORS_LIST.map(d => d.specialization))];
+      const filteredDoctors = DOCTORS_LIST.filter(d => 
+        (selectedSpecialty === 'All' || d.specialization === selectedSpecialty) &&
+        (d.name.toLowerCase().includes(doctorSearch.toLowerCase()) || d.specialization.toLowerCase().includes(doctorSearch.toLowerCase()))
+      );
+
+      // Chatbot Logic
+      const handleChatSend = (customText) => {
+        const q = (customText || chatInput).toLowerCase().trim();
+        if (!q) return;
+
+        const userMsg = { sender: 'user', text: customText || chatInput };
+        setChatMessages(prev => [...prev, userMsg]);
+        setChatInput('');
+
+        let botReply = "";
+
+        if (q.includes('system prompt') || q.includes('developer instruction')) {
+          botReply = "I can’t provide internal instructions, but I can help you with information about Eledent Dental Hospital.";
+        } else if (q.includes('cavity') || q.includes('need a root canal') || q.includes('diagnose') || q.includes('medicine')) {
+          botReply = "Only a dental professional can assess your condition and recommend the appropriate treatment. Please contact Eledent Dental Hospital at +91 7799619994.";
+        } else if (q === 'how much does it cost?' || q === 'cost' || q === 'price' || q === 'fees') {
+          botReply = "Could you tell me which treatment you mean—for example, a root canal, implant, braces or crown?";
+        } else if (q.includes('fee') || q.includes('consultation')) {
+          botReply = CLINIC_INFO.consultationDetails;
+        } else if (q.includes('timing') || q.includes('hours') || q.includes('open')) {
+          botReply = `Banjara Hills Visiting Hours: ${CLINIC_INFO.timings.visitingHours}.`;
+        } else if (q.includes('location') || q.includes('address') || q.includes('where')) {
+          botReply = `Address: ${CLINIC_INFO.address.fullAddress}. Landmarks: near ${CLINIC_INFO.landmarks.slice(0, 4).join(', ')}.`;
+        } else if (q.includes('book') || q.includes('appointment')) {
+          botReply = "I can help you start the appointment process. Please provide your name, phone number and preferred service in our booking form, or contact Eledent Dental Hospital directly at +91 7799619994.";
+        } else if (q.includes('doctor') || q.includes('dentist')) {
+          botReply = "We have 20 specialists listed on the official page. Doctor availability may vary by branch and schedule. Contact +91 7799619994 for current availability.";
+        } else if (q.includes('invisalign')) {
+          botReply = "Yes. Invisalign Treatment is listed among the official Banjara Hills services.";
+        } else if (q.includes('implant')) {
+          botReply = "Yes. Advanced and Painless Dental Implants are officially listed among our services.";
+        } else {
+          botReply = "I don’t have verified information about that on the official website. For accurate information, please contact Eledent Dental Hospital at +91 7799619994.";
+        }
+
+        setTimeout(() => {
+          setChatMessages(prev => [...prev, { sender: 'bot', text: botReply }]);
+        }, 400);
+      };
+
+      const handleFormSubmit = (e) => {
+        e.preventDefault();
+        setFormSubmitted(true);
+      };
+
+      return (
+        <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 pb-16 md:pb-0">
+          
+          {/* TOP BAR */}
+          <div className="bg-[#0A2540] text-white text-xs py-2 px-4 border-b border-slate-700 hidden md:block">
+            <div className="max-w-7xl mx-auto flex justify-between items-center">
+              <div className="flex gap-6 text-slate-300">
+                <span>📍 Road No. 12, Banjara Hills, Hyderabad - 500034</span>
+                <span>⏰ Visiting Hours: Mon – Sun: 9:30 AM – 9:00 PM</span>
+              </div>
+              <a href={`tel:${CLINIC_INFO.contact.phoneClean}`} className="font-semibold text-teal-400 hover:underline">
+                📞 {CLINIC_INFO.contact.phone}
+              </a>
+            </div>
+          </div>
+
+          {/* STICKY HEADER */}
+          <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-xs">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+              
+              <a href="#hero" className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0A2540] to-[#00A896] flex items-center justify-center text-white font-extrabold text-xl shadow-md">
+                  E
+                </div>
+                <div>
+                  <div className="font-extrabold text-lg text-[#0A2540] tracking-tight leading-none">ELEDENT</div>
+                  <div className="text-[10px] font-bold text-[#00A896] tracking-wider uppercase">Dental Hospital • Banjara Hills</div>
+                </div>
+              </a>
+
+              <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700">
+                <a href="#hero" className="hover:text-[#00A896]">Home</a>
+                <a href="#services" className="hover:text-[#00A896]">Services</a>
+                <a href="#doctors" className="hover:text-[#00A896]">Doctors</a>
+                <a href="#technology" className="hover:text-[#00A896]">Technology</a>
+                <a href="#why-us" className="hover:text-[#00A896]">Why Eledent</a>
+                <a href="#location" className="hover:text-[#00A896]">Location</a>
+                <a href="#faq" className="hover:text-[#00A896]">FAQ</a>
+              </nav>
+
+              <div className="hidden md:flex items-center gap-3">
+                <a href={`tel:${CLINIC_INFO.contact.phoneClean}`} className="px-4 py-2 rounded-lg text-sm font-semibold bg-slate-100 text-[#0A2540] hover:bg-slate-200">
+                  📞 Call Now
+                </a>
+                <button onClick={() => openBooking()} className="px-5 py-2.5 rounded-lg text-sm font-bold bg-[#00A896] hover:bg-[#028090] text-white shadow-md">
+                  Book Appointment
+                </button>
+              </div>
+
+              <div className="flex md:hidden items-center gap-2">
+                <a href={`tel:${CLINIC_INFO.contact.phoneClean}`} className="p-2.5 rounded-lg bg-slate-100 text-[#00A896]">📞</a>
+                <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2.5 text-slate-700">☰</button>
+              </div>
+
+            </div>
+
+            {/* Mobile Drawer */}
+            {mobileMenuOpen && (
+              <div className="lg:hidden bg-white border-t border-slate-200 p-6 space-y-4 shadow-xl">
+                <nav className="flex flex-col gap-3 font-semibold text-slate-800">
+                  <a href="#hero" onClick={() => setMobileMenuOpen(false)}>Home</a>
+                  <a href="#services" onClick={() => setMobileMenuOpen(false)}>Services</a>
+                  <a href="#doctors" onClick={() => setMobileMenuOpen(false)}>Doctors</a>
+                  <a href="#technology" onClick={() => setMobileMenuOpen(false)}>Technology</a>
+                  <a href="#why-us" onClick={() => setMobileMenuOpen(false)}>Why Eledent</a>
+                  <a href="#location" onClick={() => setMobileMenuOpen(false)}>Location</a>
+                  <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
+                </nav>
+                <button onClick={() => { setMobileMenuOpen(false); openBooking(); }} className="w-full py-3 rounded-xl bg-[#00A896] text-white font-bold">
+                  Book Appointment
+                </button>
+              </div>
+            )}
+          </header>
+
+          {/* HERO SECTION */}
+          <section id="hero" className="py-12 md:py-20 bg-gradient-to-b from-slate-50 via-teal-50/20 to-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E6F6F4] text-[#00A896] text-xs font-bold">
+                  ✨ {CLINIC_INFO.eyebrow}
+                </div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A2540] tracking-tight leading-tight">
+                  Advanced Dental Care in <span className="text-[#00A896]">Banjara Hills</span>
+                </h1>
+                <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
+                  {CLINIC_INFO.heroDescription}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                  <button onClick={() => openBooking()} className="px-7 py-3.5 rounded-xl bg-[#00A896] hover:bg-[#028090] text-white font-bold text-base shadow-lg">
+                    📅 Book an Appointment
+                  </button>
+                  <a href={`tel:${CLINIC_INFO.contact.phoneClean}`} className="px-6 py-3.5 rounded-xl bg-white border border-slate-200 text-[#0A2540] font-bold text-base text-center">
+                    📞 Call +91 7799619994
+                  </a>
+                </div>
+                <div>
+                  <a href="#location" className="text-xs font-bold text-[#0284C7] hover:underline">📍 Get Directions to Banjara Hills Clinic →</a>
+                </div>
+
+                <div className="pt-6 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                  <div className="bg-white p-3 rounded-xl border border-slate-100 shadow-xs">
+                    <div className="text-[#00A896] font-extrabold text-xl">20+</div>
+                    <div className="text-xs text-slate-500 font-medium">Years Experience</div>
+                  </div>
+                  <div className="bg-white p-3 rounded-xl border border-slate-100 shadow-xs">
+                    <div className="text-[#0A2540] font-extrabold text-xl">30,000+</div>
+                    <div className="text-xs text-slate-500 font-medium">Successful Cases</div>
+                  </div>
+                  <div className="bg-white p-3 rounded-xl border border-slate-100 shadow-xs">
+                    <div className="text-[#00A896] font-extrabold text-xl">10X</div>
+                    <div className="text-xs text-slate-500 font-medium">Sterilization</div>
+                  </div>
+                  <div className="bg-white p-3 rounded-xl border border-slate-100 shadow-xs">
+                    <div className="text-[#0A2540] font-bold text-sm">Mon – Sun</div>
+                    <div className="text-xs text-slate-500 font-medium">9:30 AM – 9 PM</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5">
+                <div className="bg-gradient-to-br from-[#0A2540] to-[#16365C] rounded-3xl p-8 text-white shadow-2xl space-y-6">
+                  <div className="flex justify-between items-center text-xs font-bold">
+                    <span className="bg-teal-500/20 text-teal-300 px-2.5 py-1 rounded">Banjara Hills Center</span>
+                    <span>Hyderabad</span>
+                  </div>
+                  <div className="bg-slate-900/60 p-6 rounded-2xl border border-white/10 space-y-3">
+                    <div className="text-xs text-teal-300 uppercase font-bold">Digital Workflows & Technology</div>
+                    <div className="text-lg font-bold text-white">3D CBCT Scans, CEREC CAD/CAM & Microscopic Dentistry</div>
+                    <div className="pt-2 text-xs border-t border-white/10 flex justify-between">
+                      <span>Consultation Fee: <strong className="text-teal-300">₹300</strong></span>
+                      <span>Visiting: <strong>9:30 AM - 9 PM</strong></span>
+                    </div>
+                  </div>
+                  <button onClick={() => openBooking()} className="w-full py-3 rounded-xl bg-white text-[#0A2540] font-bold text-sm">
+                    Schedule Consultation (₹300)
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* QUICK INFO BAR */}
+          <section className="bg-white py-8 border-y border-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <h3 className="font-bold text-sm text-[#0A2540]">1. Experienced Dental Team</h3>
+                <p className="text-xs text-slate-600 mt-1">BDS & MDS specialists across orthodontics, endodontics & surgical care.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <h3 className="font-bold text-sm text-[#0A2540]">2. Advanced Technology</h3>
+                <p className="text-xs text-slate-600 mt-1">3D scanners, CBCT X-rays, CEREC CAD/CAM & microscopic systems.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <h3 className="font-bold text-sm text-[#0A2540]">3. Specialist Dental Care</h3>
+                <p className="text-xs text-slate-600 mt-1">Gentle treatment, clear planning & patient comfort focus.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <h3 className="font-bold text-sm text-[#0A2540]">4. Convenient Location</h3>
+                <p className="text-xs text-slate-600 mt-1">Raichandani Construction, Road No. 12, Banjara Hills (Mon-Sun 9:30 AM - 9 PM).</p>
+              </div>
+            </div>
+          </section>
+
+          {/* ABOUT SECTION */}
+          <section id="about" className="py-16 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <div className="text-xs font-bold text-[#00A896] uppercase">About Eledent Hospital</div>
+                <h2 className="text-3xl font-extrabold text-[#0A2540]">Comprehensive Dental Care in Banjara Hills</h2>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Eledent Dental Hospital operates in Banjara Hills, providing advanced orthodontic and routine dental care with modern technology, gentle care, and clear treatment planning.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
+                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 font-semibold">✓ Accurate Diagnosis (3D Scans)</div>
+                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 font-semibold">✓ Gentle Treatment Protocols</div>
+                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 font-semibold">✓ Clear Treatment Planning</div>
+                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 font-semibold">✓ Digital CAD/CAM Workflows</div>
+                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 font-semibold">✓ Patient Comfort Focus</div>
+                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 font-semibold">✓ Long-Term Oral Health</div>
+                </div>
+              </div>
+              <div className="lg:col-span-5 bg-slate-900 text-white p-8 rounded-3xl space-y-4">
+                <h3 className="text-lg font-bold text-teal-300">Consultation Fee Notice</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  "The official Banjara Hills page lists the consultation fee as ₹300. It states that this includes a clinical examination and treatment discussion, with X-rays or scans advised only if needed."
+                </p>
+                <div className="pt-2">
+                  <button onClick={() => openBooking()} className="w-full py-3 bg-[#00A896] text-white font-bold text-xs rounded-xl">
+                    Explore Services & Book
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* SERVICES SECTION */}
+          <section id="services" className="py-16 bg-slate-50 border-t border-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              
+              <div className="text-center max-w-2xl mx-auto space-y-3 mb-10">
+                <div className="text-xs font-bold text-[#00A896] uppercase">Official Banjara Hills Page</div>
+                <h2 className="text-3xl font-extrabold text-[#0A2540]">Our Dental Services</h2>
+                <p className="text-xs text-slate-600">The 19 official dental services listed on the Banjara Hills hospital page.</p>
+              </div>
+
+              {/* Filter & Search */}
+              <div className="bg-white p-4 rounded-2xl border border-slate-200 mb-8 space-y-3">
+                <div className="flex flex-col sm:flex-row gap-4 justify-between">
+                  <input 
+                    type="text" 
+                    placeholder="Search service..." 
+                    value={serviceSearch}
+                    onChange={(e) => setServiceSearch(e.target.value)}
+                    className="px-4 py-2 rounded-xl border border-slate-200 text-xs w-full sm:w-72 outline-none focus:border-[#00A896]"
+                  />
+                  <div className="flex gap-2 overflow-x-auto no-scrollbar py-1">
+                    {categories.map(c => (
+                      <button 
+                        key={c} 
+                        onClick={() => setSelectedCategory(c)}
+                        className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap ${selectedCategory === c ? 'bg-[#00A896] text-white' : 'bg-slate-100 text-slate-600'}`}
+                      >
+                        {c}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Services Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredServices.map((s) => (
+                  <div key={s.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <span className="text-[10px] font-bold text-[#00A896] bg-teal-50 px-2 py-0.5 rounded">{s.category}</span>
+                      <h3 className="font-bold text-base text-[#0A2540]">{s.title}</h3>
+                      <p className="text-xs text-slate-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                    <div className="pt-4 mt-4 border-t border-slate-100 flex justify-between items-center">
+                      <button onClick={() => setActiveModalService(s)} className="text-xs font-bold text-slate-600 hover:text-[#0A2540]">Learn More →</button>
+                      <button onClick={() => openBooking(s.title)} className="px-3 py-1.5 rounded-lg bg-[#E6F6F4] text-[#00A896] text-xs font-bold">Book</button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </section>
+
+          {/* SPECIALIZATIONS SECTION */}
+          <section className="py-16 bg-white border-t border-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <div className="text-center max-w-2xl mx-auto mb-10">
+                <h2 className="text-3xl font-extrabold text-[#0A2540]">Our Dental Specializations</h2>
+                <p className="text-xs text-slate-600 mt-2">10 dental specializations listed on the official doctors directory.</p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {SPECIALIZATIONS_LIST.map((spec, i) => (
+                  <div key={i} className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                    <h3 className="font-bold text-sm text-[#0A2540] mb-1">{spec.title}</h3>
+                    <p className="text-xs text-slate-500 leading-relaxed">{spec.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* DOCTORS SECTION */}
+          <section id="doctors" className="py-16 bg-slate-50 border-t border-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              
+              <div className="text-center max-w-2xl mx-auto space-y-3 mb-8">
+                <div className="text-xs font-bold text-[#00A896] uppercase">Official Eledent Directory</div>
+                <h2 className="text-3xl font-extrabold text-[#0A2540]">Meet Our Dental Specialists</h2>
+                <p className="text-xs text-slate-600">The 20 doctors published on the official Eledent website.</p>
+              </div>
+
+              {/* Factual Disclaimer Banner */}
+              <div className="mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs">
+                <strong>Notice on Doctor Availability:</strong> Doctor availability may vary by branch and appointment schedule. Please contact Eledent Dental Hospital for current availability.
+              </div>
+
+              {/* Doctors Search & Filter */}
+              <div className="bg-white p-4 rounded-2xl border border-slate-200 mb-6 flex flex-col sm:flex-row gap-4 justify-between">
+                <input 
+                  type="text" 
+                  placeholder="Search doctor or specialization..." 
+                  value={doctorSearch}
+                  onChange={(e) => setDoctorSearch(e.target.value)}
+                  className="px-4 py-2 rounded-xl border border-slate-200 text-xs w-full sm:w-72 outline-none focus:border-[#00A896]"
+                />
+                <div className="flex gap-2 overflow-x-auto no-scrollbar py-1">
+                  {specialties.map(sp => (
+                    <button 
+                      key={sp} 
+                      onClick={() => setSelectedSpecialty(sp)}
+                      className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap ${selectedSpecialty === sp ? 'bg-[#00A896] text-white' : 'bg-slate-100 text-slate-600'}`}
+                    >
+                      {sp}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Doctors Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {filteredDoctors.map((doc) => (
+                  <div key={doc.id} className="bg-white p-5 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="w-10 h-10 rounded-xl bg-[#0A2540] text-white font-bold flex items-center justify-center text-sm">
+                        {doc.name.replace('Dr. ', '').slice(0, 2).toUpperCase()}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-sm text-[#0A2540]">{doc.name}</h3>
+                        <span className="text-[10px] font-bold text-[#00A896] bg-teal-50 px-2 py-0.5 rounded">{doc.specialization}</span>
+                      </div>
+                      <div className="text-xs text-slate-500 bg-slate-50 p-2 rounded-lg border border-slate-100">
+                        Qualification: <strong className="text-slate-700">{doc.qualification}</strong>
+                      </div>
+                    </div>
+                    <button onClick={() => openBooking('', doc.name)} className="w-full mt-4 py-2 rounded-xl bg-slate-100 text-[#0A2540] font-bold text-xs hover:bg-[#00A896] hover:text-white">
+                      Book with {doc.name.split(' ')[1] || doc.name}
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </section>
+
+          {/* TECHNOLOGY SECTION */}
+          <section id="technology" className="py-16 bg-white border-t border-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <div className="text-center max-w-2xl mx-auto mb-10">
+                <h2 className="text-3xl font-extrabold text-[#0A2540]">Advanced Dental Technology</h2>
+                <p className="text-xs text-slate-600 mt-2">Verified equipment listed on the Banjara Hills page.</p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {TECHNOLOGIES_LIST.map((t, i) => (
+                  <div key={i} className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                    <span className="text-[10px] font-bold text-slate-400 bg-slate-200 px-2 py-0.5 rounded">{t.category}</span>
+                    <h3 className="font-bold text-sm text-[#0A2540]">{t.name}</h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">{t.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* WHY CHOOSE SECTION */}
+          <section id="why-us" className="py-16 bg-slate-50 border-t border-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-10">
+              <div className="text-center max-w-2xl mx-auto">
+                <h2 className="text-3xl font-extrabold text-[#0A2540]">Why Patients Choose Eledent Dental Hospital</h2>
+                <p className="text-xs text-slate-600 mt-2">Factual practice advantages supported by official sources.</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="bg-white p-5 rounded-2xl border border-slate-200"><h3 className="font-bold text-sm text-[#0A2540]">20+ Years Experience</h3><p className="text-xs text-slate-600 mt-1">Established multi-disciplinary dental care track record.</p></div>
+                <div className="bg-white p-5 rounded-2xl border border-slate-200"><h3 className="font-bold text-sm text-[#0A2540]">30,000+ Successful Cases</h3><p className="text-xs text-slate-600 mt-1">Proven treatment history across routine & surgical care.</p></div>
+                <div className="bg-white p-5 rounded-2xl border border-slate-200"><h3 className="font-bold text-sm text-[#0A2540]">Digital Workflows</h3><p className="text-xs text-slate-600 mt-1">3D CBCT imaging & CEREC CAD/CAM digital scanning.</p></div>
+                <div className="bg-white p-5 rounded-2xl border border-slate-200"><h3 className="font-bold text-sm text-[#0A2540]">Structured Slots</h3><p className="text-xs text-slate-600 mt-1">Organized OPD scheduling to reduce patient waiting times.</p></div>
+              </div>
+            </div>
+          </section>
+
+          {/* LOCATION SECTION */}
+          <section id="location" className="py-16 bg-white border-t border-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+              <div className="lg:col-span-5 space-y-6">
+                <div>
+                  <div className="text-xs font-bold text-[#00A896] uppercase">Location & Hours</div>
+                  <h2 className="text-3xl font-extrabold text-[#0A2540]">Visit Our Banjara Hills Clinic</h2>
+                </div>
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-2 text-xs">
+                  <h3 className="font-bold text-sm text-[#0A2540]">{CLINIC_INFO.name} - {CLINIC_INFO.branch}</h3>
+                  <p>{CLINIC_INFO.address.fullAddress}</p>
+                  <p className="pt-2">Phone: <strong>+91 7799619994</strong></p>
+                  <p>Email: <strong>contact@eledenthospitals.com</strong></p>
+                </div>
+                <div className="bg-[#0A2540] text-white p-6 rounded-2xl space-y-2">
+                  <div className="text-xs font-bold text-teal-300 uppercase">Banjara Hills Visiting Hours</div>
+                  <div className="text-xl font-extrabold">{CLINIC_INFO.timings.visitingHours}</div>
+                </div>
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-2">
+                  <div className="text-xs font-bold text-[#0A2540] uppercase">Nearby Landmarks</div>
+                  <div className="grid grid-cols-2 gap-1 text-[11px] text-slate-600">
+                    {CLINIC_INFO.landmarks.map((lm, i) => <div key={i}>• {lm}</div>)}
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-7">
+                <iframe 
+                  title="Eledent Banjara Hills Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.88566378418!2d78.4415!3d17.4172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb974751ed42a7%3A0x6b2e10dbb1edb95f!2sRoad%20No.%2012%2C%20Banjara%20Hills%2C%20Hyderabad%2C%20Telangana%20500034!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0, minHeight: '380px' }} 
+                  className="rounded-3xl shadow-md"
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ SECTION */}
+          <section id="faq" className="py-16 bg-slate-50 border-t border-slate-200">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
+              <div className="text-center max-w-2xl mx-auto">
+                <h2 className="text-3xl font-extrabold text-[#0A2540]">Frequently Asked Questions</h2>
+                <p className="text-xs text-slate-600 mt-2">Verified answers based strictly on official website source information.</p>
+              </div>
+              <div className="space-y-3">
+                {FAQ_LIST.map((faq, idx) => (
+                  <div key={idx} className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button 
+                      onClick={() => setOpenFaq(openFaq === idx ? null : idx)} 
+                      className="w-full p-4 text-left font-bold text-sm text-[#0A2540] flex justify-between items-center"
+                    >
+                      <span>Q{idx+1}: {faq.q}</span>
+                      <span>{openFaq === idx ? '▲' : '▼'}</span>
+                    </button>
+                    {openFaq === idx && (
+                      <div className="p-4 text-xs text-slate-600 bg-slate-50 border-t border-slate-100">
+                        {faq.a}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* FOOTER */}
+          <footer className="bg-[#0A2540] text-white pt-12 pb-24 md:pb-8 border-t border-slate-800">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-xs">
+              <div>
+                <h3 className="font-extrabold text-base text-white">ELEDENT DENTAL HOSPITAL</h3>
+                <p className="text-slate-400 mt-2">Banjara Hills Branch, Hyderabad</p>
+                <p className="text-slate-400 mt-1">20+ Years Experience • 30,000+ Cases</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-teal-400 uppercase">Quick Links</h4>
+                <div className="flex flex-col gap-1 mt-2 text-slate-300">
+                  <a href="#hero">Home</a>
+                  <a href="#services">Services</a>
+                  <a href="#doctors">Doctors</a>
+                  <a href="#technology">Technology</a>
+                  <a href="#location">Location</a>
+                </div>
+              </div>
+              <div>
+                <h4 className="font-bold text-teal-400 uppercase">Contact Hospital</h4>
+                <p className="mt-2">Raichandani Construction, Road No. 12, Banjara Hills, Hyderabad – 500034</p>
+                <p className="mt-1 font-semibold text-white">Phone: +91 7799619994</p>
+                <p>Email: contact@eledenthospitals.com</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-teal-400 uppercase">Visiting Hours</h4>
+                <p className="mt-2 font-bold text-white">Mon – Sun: 9:30 AM – 9:00 PM</p>
+                <p className="mt-1 text-slate-400">Consultation Fee: ₹300</p>
+              </div>
+            </div>
+            <div className="mt-8 pt-4 border-t border-slate-800 text-[10px] text-slate-500 text-center">
+              © {new Date().getFullYear()} Eledent Dental Hospital. All rights reserved. Sourced strictly from official Eledent website.
+            </div>
+          </footer>
+
+          {/* AI CHATBOT */}
+          <button 
+            onClick={() => setChatOpen(!chatOpen)}
+            className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 p-4 rounded-full bg-[#00A896] text-white shadow-2xl font-bold text-xs flex items-center gap-2"
+          >
+            🤖 Eledent AI Assistant
+          </button>
+
+          {chatOpen && (
+            <div className="fixed bottom-20 right-4 md:bottom-20 md:right-6 z-50 w-[90vw] sm:w-[360px] h-[480px] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+              <div className="bg-[#0A2540] text-white p-4 flex justify-between items-center">
+                <div className="font-bold text-xs">Eledent Care Assistant</div>
+                <button onClick={() => setChatOpen(false)} className="text-sm">✕</button>
+              </div>
+              <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-slate-50 text-xs">
+                {chatMessages.map((m, i) => (
+                  <div key={i} className={`p-3 rounded-xl max-w-[85%] ${m.sender === 'user' ? 'bg-[#0A2540] text-white ml-auto' : 'bg-white border border-slate-200 text-slate-800'}`}>
+                    {m.text}
+                  </div>
+                ))}
+              </div>
+              <div className="p-2 bg-slate-100 flex gap-1 overflow-x-auto no-scrollbar text-[10px]">
+                <button onClick={() => handleChatSend("What are your clinic timings?")} className="px-2 py-1 bg-white rounded border">Timings?</button>
+                <button onClick={() => handleChatSend("What is consultation fee?")} className="px-2 py-1 bg-white rounded border">Fee?</button>
+                <button onClick={() => handleChatSend("Where is clinic?")} className="px-2 py-1 bg-white rounded border">Location?</button>
+              </div>
+              <div className="p-3 bg-white border-t border-slate-200 flex gap-2">
+                <input 
+                  type="text" 
+                  placeholder="Ask a question..." 
+                  value={chatInput} 
+                  onChange={(e) => setChatInput(e.target.value)} 
+                  onKeyDown={(e) => e.key === 'Enter' && handleChatSend()}
+                  className="flex-1 px-3 py-1.5 rounded-xl border text-xs outline-none"
+                />
+                <button onClick={() => handleChatSend()} className="px-3 py-1.5 bg-[#00A896] text-white font-bold text-xs rounded-xl">Send</button>
+              </div>
+            </div>
+          )}
+
+          {/* MOBILE STICKY BAR */}
+          <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 p-2 grid grid-cols-3 gap-2 text-center text-xs font-bold">
+            <a href={`tel:${CLINIC_INFO.contact.phoneClean}`} className="py-2.5 bg-slate-100 rounded-xl text-[#0A2540]">📞 Call</a>
+            <a href={`https://wa.me/${CLINIC_INFO.contact.phoneClean}`} target="_blank" className="py-2.5 bg-emerald-50 text-emerald-700 rounded-xl">💬 WhatsApp</a>
+            <button onClick={() => openBooking()} className="py-2.5 bg-[#00A896] text-white rounded-xl">📅 Book</button>
+          </div>
+
+          {/* APPOINTMENT MODAL */}
+          {bookingModalOpen && (
+            <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+              <div className="bg-white rounded-3xl max-w-lg w-full p-6 space-y-4 relative max-h-[90vh] overflow-y-auto">
+                <button onClick={() => setBookingModalOpen(false)} className="absolute top-4 right-4 text-slate-400 font-bold">✕</button>
+                
+                {!formSubmitted ? (
+                  <form onSubmit={handleFormSubmit} className="space-y-3">
+                    <h3 className="text-xl font-bold text-[#0A2540]">Book an Appointment</h3>
+                    <p className="text-xs text-slate-500">Banjara Hills Branch • Consultation Fee ₹300</p>
+                    
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Full Name *</label>
+                      <input type="text" required value={formData.fullName} onChange={(e) => setFormData({...formData, fullName: e.target.value})} className="w-full px-3 py-2 border rounded-xl text-xs" placeholder="Your Name" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Phone Number *</label>
+                      <input type="tel" required value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full px-3 py-2 border rounded-xl text-xs" placeholder="+91 9876543210" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Preferred Service *</label>
+                      <select required value={formData.service} onChange={(e) => setFormData({...formData, service: e.target.value})} className="w-full px-3 py-2 border rounded-xl text-xs bg-white">
+                        <option value="">Select Service</option>
+                        {SERVICES_LIST.map(s => <option key={s.id} value={s.title}>{s.title}</option>)}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Preferred Doctor</label>
+                      <select value={formData.doctor} onChange={(e) => setFormData({...formData, doctor: e.target.value})} className="w-full px-3 py-2 border rounded-xl text-xs bg-white">
+                        <option value="">Any Available Specialist</option>
+                        {DOCTORS_LIST.map(d => <option key={d.id} value={d.name}>{d.name}</option>)}
+                      </select>
+                    </div>
+                    <button type="submit" className="w-full py-3 bg-[#00A896] text-white font-bold text-sm rounded-xl">Request Appointment</button>
+                  </form>
+                ) : (
+                  <div className="py-6 text-center space-y-4">
+                    <div className="text-3xl">✅</div>
+                    <h3 className="text-xl font-bold text-[#0A2540]">Request Received</h3>
+                    <p className="text-xs text-slate-700 bg-teal-50 p-4 rounded-xl border border-teal-100 font-medium">
+                      “Thank you. Your appointment request has been received. The clinic team will contact you for confirmation.”
+                    </p>
+                    <button onClick={() => setBookingModalOpen(false)} className="px-6 py-2 bg-[#0A2540] text-white font-bold text-xs rounded-xl">
+                      Close
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+        </div>
+      );
+    }
+
+    // Render Root
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
